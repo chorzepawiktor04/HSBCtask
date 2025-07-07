@@ -1,5 +1,5 @@
-\l "C:/Users/Dell/Desktop/CodingTask/exercise2/src/VWAP.q"
-\l "C:/Users/Dell/Desktop/CodingTask/exercise2/src/TWAP.q"
+\l "src/VWAP.q"
+\l "src/TWAP.q"
 
 
 assertEqual: { 
@@ -19,16 +19,22 @@ t: ([]
 );
 
 
-vwap1: vwap[t; 2025.01.01; 2025.01.01; `PLNGBP];
+vwapTest: vwap[t; 2025.01.01; 2025.01.01; `PLNGBP];
 expected1: (4.47 * 11916) % 11916;  / VWAP = (price * size) / sum size = 4.47
-assertEqual[expected1; vwap1; "VWAP test"];
+assertEqual[expected1; vwapTest; "VWAP test"];
 
-twap1: twap[t; 2025.01.01; 2025.01.02; `USDPLN];
+twapTest: twap[t; 2025.01.01; 2025.01.02; `USDPLN];
 expected2: (4.68+3.32)%2;
-assertEqual[expected2; twap1; "TWAP test"];
+assertEqual[expected2; twapTest; "TWAP test"];
 
 vwapEmpty: vwap[t; 2024.01.01; 2024.01.02; `PLNGBP];
 assertEqual[::; vwapEmpty; "VWAP empty test"];
 
 twapEmpty: twap[t; 2024.01.01; 2024.01.03; `USDCHF];
 assertEqual[::; twapEmpty; "TWAP empty test"];
+
+
+
+
+
+
