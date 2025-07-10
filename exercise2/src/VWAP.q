@@ -1,1 +1,1 @@
-vwap:{[t;start;end;currs] temp:t[where (t[`data]>start) and (t[`data]<end) and (t[`currency] in currs)]; select vwap: (sum price * size) % sum size by currency from temp}
+vwap:{[t;start;end;currs] temp:t[where (t[`data]>=start) and (t[`data]<=end) and (t[`currency] in currs)]; select vwap: (sum price * size) % sum size by currency from temp}

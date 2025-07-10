@@ -1,9 +1,16 @@
-\l "src/VWAP.q"
-\l "src/TWAP.q"
-\l "tests/tests.q"
+\l VWAP.q
+\l TWAP.q
 
-data: ("DFJS"; enlist ",") 0: `:"data/input.csv"
+\cd ../
+\cd data
 
+data: ("DFJS"; enlist ",") 0: `:input.csv
 
-vwap[data; 2025.01.01; 2025.07.01; `PLNGBP`CHFPLN];
-twap[data; 2025.01.01; 2025.07.01; `USDPLN`GBPCHF];
+\cd ../
+\cd tests
+
+\l tests.q
+
+show vwap[data; 2025.01.01; 2025.07.01; `PLNGBP`CHFPLN];
+show "----------------------------"
+show twap[data; 2025.01.01; 2025.07.01; `USDPLN`GBPCHF];
