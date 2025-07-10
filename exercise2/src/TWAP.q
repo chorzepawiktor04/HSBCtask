@@ -1,1 +1,1 @@
-twap:{[t;start;end;currs] temp:t[where (t[`data]>=start) and (t[`data]<=end) and (t[`currency] in currs)];days:1+end-start; select twap: (sum price) % days by currency from temp}
+twap:{[t;start;end;currs] temp:t[where (t[`data]>=start) and (t[`data]<=end) and (t[`currency] in currs)]; days:1+end-start; select twap: (sum price) % days by currency from temp}

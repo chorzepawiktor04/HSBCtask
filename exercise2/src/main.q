@@ -1,3 +1,4 @@
+\cd src
 \l VWAP.q
 \l TWAP.q
 

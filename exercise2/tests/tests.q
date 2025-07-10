@@ -29,8 +29,8 @@ show assertEqual[expected2; first twapTest; "TWAP test"];
 vwapEmpty: value vwap[t; 2024.01.01; 2024.01.02; `PLNGBP][;`vwap];
 show assertEqual[0; count vwapEmpty; "VWAP empty test"];
 
-twapEmpty: value twap[t; 2024.01.01; 2024.01.03; `USDCHF];
-show assertEqual[0; count twapEmpty; "TWAP empty test"][;`twap];
+twapEmpty: value twap[t; 2024.01.01; 2024.01.03; `USDCHF][;`twap];
+show assertEqual[0; count twapEmpty; "TWAP empty test"];
 
 vwapTwoCurrencies: value vwap[t; 2025.01.01; 2025.01.01; `PLNGBP`GBPCHF][;`vwap];
 expected3: (((2.17 * 31883) % 31883), ((4.47 * 11916) % 11916)); 
